@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        class MathUtil{
+            static Sum(...numbers){
+                //disini kita pakai ...numbers untuk menangkap semua argumen yang dikirimkan
+                //...number ini disebut rest parameter yang akan mengubah argumen menjadi array
+                let total = 0;
+              for(const number of numbers){
+                // ini namanya perulangan for of untuk mengakses setiap nilai dalam array
+                total += number;
+              }
+              return total;
+            }
+        }
+
+        // contoh pemanggilan static method
+        console.info(MathUtil.Sum(2,3,232,1,4,1)) // 243
+    </script>
+    
+</body>
+</html>
