@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        class MathUtil {
+            static Sum(...numbers) {
+                // ini adalah error handling sederhana yang berfungsi untuk mengecek apakah ada argumen yang dikirimkan
+                // kita dapat melempar error dengan menggunakan throw new Error("pesan error")
+                if (numbers.lenght === 0) {
+                    throw new Error("Tidak ada angka yang dikirimkan untuk dijumlahkan")
+                }
+
+                let total = 0;
+                for (const number of numbers) {
+                    total += number;
+                }
+                return total;
+            }
+        }
+
+        console.info(MathUtil.Sum(2, 3, 232, 1, 4, 1)) // 243
+    </script>
+
+</body>
+
+</html>
