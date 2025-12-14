@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Configuration{
+          static host = "localhost";
+          static db_name = "my_database";
+          static port = "8080";
+          static getDbURL(){
+            return `${this.host}:${this.port}/${this.db_name}`
+          }
+        }
+
+        const config = new Configuration();
+        // console.info(config.host); ini kosong karena host adalah static property
+        // kalau mau mengakses static property harus melalui classnya secara langsung
+
+
+
+        // contoh mengakses static property
+        // static ini sifatnya milik class bukan milik objectnya dan bisa diakses tanpa membuat instance
+        console.info(Configuration.port) //8080
+    </script>
+</body>
+</html>
