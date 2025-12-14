@@ -19,7 +19,7 @@
             }
         }
 
-        class Manager {
+        class Manager extends Employee {
             nama;
             division;
 
@@ -33,6 +33,7 @@
 
         const budi = new Employee("Budi Siregar", "Backend Developer")
         const Jamal = new Manager("Jamaludin", "Team Lead")
+        
 
         // pengecekan instance dengan menggunakan operator instanceof dimana
         //  disini kita mengecek apakah sebuah object merupakan instance dari sebuah class tertentu
