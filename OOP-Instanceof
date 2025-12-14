@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator InstanceOF</title>
+</head>
+
+<body>
+
+    <script>
+        class Employee {
+            nama;
+            posisi;
+            constructor(nama, posisi) {
+                this.nama = nama
+                this.posisi = posisi
+            }
+        }
+
+        class Manager {
+            nama;
+            division;
+
+            constructor(nama, divisi) {
+                this.nama = nama
+                this.division = divisi
+            }
+
+        }
+
+
+        const budi = new Employee("Budi Siregar", "Backend Developer")
+        const Jamal = new Manager("Jamaludin", "Team Lead")
+
+        // pengecekan instance dengan menggunakan operator instanceof dimana
+        //  disini kita mengecek apakah sebuah object merupakan instance dari sebuah class tertentu
+
+        console.info(budi instanceof Employee) // true
+        console.info(budi instanceof Manager) // false
+
+        console.info(Jamal instanceof Employee) // false
+        console.info(Jamal instanceof Manager) // true
+
+    </script>
+
+</body>
+
+</html>
