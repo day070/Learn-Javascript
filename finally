@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        class MathUtil {
+            static Sum(...numbers) {
+                // ini adalah error handling sederhana yang berfungsi untuk mengecek apakah ada argumen yang dikirimkan
+                // kita dapat melempar error dengan menggunakan throw new Error("pesan error")
+                
+                if (numbers.length === 0) {
+                    throw new Error("Tidak ada angka yang dikirimkan untuk dijumlahkan")
+                }
+
+                let total = 0;
+                for (const number of numbers) {
+                    total += number;
+                }
+                return total;
+            }
+        }
+
+        try{
+            // contoh penggunaan try catch untuk menangkap error
+            console.info(MathUtil.Sum()) // memanggil tanpa argumen
+        }catch(e){
+            console.error("Terjadi error :" + e.message)// menampilkan pesan error ke console
+        }finally{
+            // blok finally akan selalu dieksekusi baik terjadi error ataupun tidak
+            // blok ini biasanya digunakan untuk membersihkan resource atau menutup koneksi
+            console.info("Blok finally dieksekusi");
+        }
+
+        console.info("Program tetap berjalan setelah menangani error")// karena error sudah ditangkap dengan try catch
+    </script>
+
+</body>
+
+</html>
